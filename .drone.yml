@@ -1,0 +1,23 @@
+kind: pipeline
+name: default
+
+workspace:
+  base: /go
+  path: src/github.com/cconover/drl
+
+steps:
+  - name: test
+    image: golang
+    commands:
+      - mkdir -p /go/bin && curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+      - dep ensure
+      - go get
+      - go test
+
+  - name: build
+    image: golang
+    commands:
+      - mkdir -p /go/bin && curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+      - dep ensure
+      - go get
+      - go build
