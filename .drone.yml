@@ -9,7 +9,7 @@ steps:
   - name: test
     image: golang
     commands:
-      - curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+      - mkdir -p /go/bin && curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
       - dep ensure
       - go get
       - go test
@@ -17,7 +17,7 @@ steps:
   - name: build
     image: golang
     commands:
-      - curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+      - mkdir -p /go/bin && curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
       - dep ensure
       - go get
       - go build
