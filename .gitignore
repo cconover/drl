@@ -1,0 +1,12 @@
+// Compiled binary
+drl
+
+// Vendored packages
+vendor/
+
+// Test coverage
+coverage.*
+
+// System meta files
+.DS_Store
+Thumbs.db
